@@ -1,0 +1,31 @@
+class Calculator {
+  constructor() {
+    this.display = document.getElementById("display");
+    this.current = "";
+  }
+
+  append(value) {
+    this.current += value;
+    this.update();
+  }
+
+  calculate() {
+    try {
+      this.current = eval(this.current).toString();
+    } catch {
+      this.current = "Error";
+    }
+    this.update();
+  }
+
+  clear() {
+    this.current = "";
+    this.update();
+  }
+
+  update() {
+    this.display.value = this.current;
+  }
+}
+
+const calc = new Calculator();
