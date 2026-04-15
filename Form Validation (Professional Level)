@@ -1,0 +1,14 @@
+function validateForm() {
+  const email = document.getElementById("email").value;
+  const error = document.getElementById("error");
+
+  const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+  if (!pattern.test(email)) {
+    error.textContent = "Invalid Email";
+    return false;
+  }
+
+  error.textContent = "";
+  return true;
+}
