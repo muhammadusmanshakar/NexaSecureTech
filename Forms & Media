@@ -1,0 +1,16 @@
+<form>
+  <label>Name:</label>
+  <input type="text" placeholder="Enter name"><br><br>
+
+  <label>Email:</label>
+  <input type="email"><br><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<img src="image.jpg" width="200">
+
+<video width="300" controls>
+  <source src="video.mp4" type="video/mp4">
+</video>
+
