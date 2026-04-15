@@ -1,0 +1,23 @@
+// utils.js
+export function greetUser(name) {
+  return `Welcome, ${name}!`;
+}
+
+// main.js
+import { greetUser } from "./utils.js";
+
+const user = {
+  name: "Usman",
+  role: "Frontend Developer"
+};
+
+function initApp() {
+  console.log(greetUser(user.name));
+  displayRole(user.role);
+}
+
+function displayRole(role) {
+  console.log(`Role: ${role}`);
+}
+
+initApp();
