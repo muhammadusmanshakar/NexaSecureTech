@@ -1,0 +1,19 @@
+async function getWeather(city) {
+  const API_KEY = "YOUR_KEY";
+  const res = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+  );
+  
+  const data = await res.json();
+  displayWeather(data);
+}
+
+function displayWeather(data) {
+  document.getElementById("weather").innerHTML = `
+    <h2>${data.name}</h2>
+    <p>${data.main.temp}°C</p>
+    <p>${data.weather[0].description}</p>
+  `;
+}
+
+getWeather("Lahore");
