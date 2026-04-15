@@ -1,0 +1,22 @@
+const app = document.getElementById("app");
+
+function createCard(title, desc) {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <h3>${title}</h3>
+    <p>${desc}</p>
+    <button>Click Me</button>
+  `;
+
+  card.querySelector("button").addEventListener("click", () => {
+    alert(`${title} clicked`);
+  });
+
+  return card;
+}
+
+["Project 1", "Project 2", "Project 3"].forEach(p => {
+  app.appendChild(createCard(p, "Dynamic content loaded"));
+});
