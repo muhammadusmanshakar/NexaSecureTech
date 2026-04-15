@@ -1,0 +1,39 @@
+//Folder Structure
+
+project/
+│── index.html
+│── css/
+│   └── style.css
+│── js/
+│   └── app.js
+│── assets/
+
+
+
+
+Advanced App Logic (Capstone)
+
+class Dashboard {
+  constructor() {
+    this.data = [];
+  }
+
+  async fetchData() {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    this.data = await res.json();
+    this.render();
+  }
+
+  render() {
+    const container = document.getElementById("dashboard");
+    container.innerHTML = this.data.slice(0, 5).map(item => `
+      <div class="card">
+        <h3>${item.title}</h3>
+        <p>${item.body}</p>
+      </div>
+    `).join("");
+  }
+}
+
+const dashboard = new Dashboard();
+dashboard.fetchData();
